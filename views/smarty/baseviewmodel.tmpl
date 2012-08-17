@@ -1,0 +1,23 @@
+<?php
+###NAMESPACE###
+/**
+ * The ###CLASS### base view model
+ *
+ * @package  app
+ * @group    viewmodel
+ * @extends  ViewModel
+ */
+class View_###CLASS### extends \ViewModel
+{
+	/**
+	 * Prepare the view data, keeping this in here helps clean up
+	 * the controller.
+	 *
+	 * @return void
+	 */
+	public function view()
+	{
+	    $controllers = explode(DS, get_class($this));
+        $this->title = str_replace('_', ' ', preg_replace('/^View_/', '', array_pop($controllers)));
+	}
+}
